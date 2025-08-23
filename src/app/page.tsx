@@ -1,9 +1,11 @@
 import { Hero } from "@/components/hero";
+import { Services } from "@/components/home/services";
 import { Submenu } from "@/components/home/submenu";
 import { getHomeData } from "@/utils/actions/get-home-data";
 import type { HomeAPIResponseData } from "@/utils/home.type";
-import styles from "./styles.module.scss";
 import { PhoneIcon } from "lucide-react";
+import styles from "./styles.module.scss";
+import { Container } from "@/components/container";
 
 const HomePage = async () => {
   const { object }: HomeAPIResponseData = await getHomeData();
@@ -11,6 +13,7 @@ const HomePage = async () => {
   return (
     <main className={styles.mainContainer}>
       <Submenu />
+
       <Hero
         heading={object.metadata.heading}
         buttonTitle={object.metadata.cta_button.title}
@@ -18,6 +21,10 @@ const HomePage = async () => {
         buttonUrl={object.metadata.cta_button.url}
         bannerUrl={object.metadata.banner.url}
       />
+
+      <Container>
+        <Services />
+      </Container>
     </main>
   );
 };
