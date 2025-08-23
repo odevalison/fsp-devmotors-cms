@@ -42,9 +42,10 @@ export const Services = ({ about, services }: ServicesProps) => {
                 priority
                 fill
               />
-
-              <p>{service.description}</p>
             </div>
+            <p className={styles.innerServiceDescription}>
+              {service.description}
+            </p>
           </article>
         ))}
       </section>
