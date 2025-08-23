@@ -1,0 +1,79 @@
+.submenuContainer {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 65px 15px 5px 15px;
+}
+
+.submenuIcon {
+  display: none;
+  background: none;
+  font-size: 20px;
+  font-weight: bold;
+
+  align-items: center;
+  gap: 10px;
+
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    display: inline-flex;
+  }
+}
+
+.submenuListContainerDesktop {
+  display: none; // Começa invisível
+
+  list-style: none;
+  padding: 15px 0;
+
+  gap: 30px 15px;
+
+  .submenuListItem {
+    background-color: #121212;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 6px;
+
+    @media (max-width: 768px) {
+      background-color: transparent;
+      color: #121212;
+      font-size: 20px;
+      font-weight: bold;
+
+      transition: all 0.4s;
+
+      &:hover {
+        background-color: #121212;
+        color: #fff;
+      }
+    }
+  }
+
+  // Fica visível apenas quando o tamanho da tela é maior que 768px
+  @media (min-width: 768px) {
+    display: flex;
+  }
+
+  @media (max-width: 768px) {
+    z-index: 99;
+
+    position: fixed;
+    width: 100%;
+    height: 100%;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(252, 252, 252, 0.8);
+    backdrop-filter: blur(6px);
+
+    &.submenuIsOpen {
+      display: flex;
+    }
+  }
+}
