@@ -23,7 +23,10 @@ const HomePage = async () => {
       />
 
       <Container>
-        <Services about={object.metadata.about} />
+        <Services
+          about={object.metadata.about}
+          services={object.metadata.services}
+        />
       </Container>
     </main>
   );
