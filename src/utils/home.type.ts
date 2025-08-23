@@ -1,4 +1,4 @@
-export interface HomeAPIResponseData {
+export type HomeAPIResponseData = {
   object: {
     slug: string;
     title: string;
@@ -26,7 +26,7 @@ export interface HomeAPIResponseData {
       };
     };
   };
-}
+};
 
 interface HomeServicesData {
   image: {
