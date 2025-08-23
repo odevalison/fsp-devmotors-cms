@@ -22,7 +22,7 @@
 }
 
 .submenuListContainerDesktop {
-  display: none; // Começa invisível
+  display: none;
 
   list-style: none;
   padding: 15px 0;
@@ -51,7 +51,7 @@
   }
 
   // Fica visível apenas quando o tamanho da tela é maior que 768px
-  @media (min-width: 768px) {
+  @media (width > 768px) {
     display: flex;
   }
 

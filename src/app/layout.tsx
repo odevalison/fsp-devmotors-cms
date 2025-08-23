@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Inter, Poppins, Sora } from "next/font/google";
+import { Sora } from "next/font/google";
 import "./globals.scss";
 import { Header } from "@/components/header";
 
-const inter = Inter({ subsets: ["latin"] });
+const sora = Sora({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "DevMotors - Sua oficina especializada",
@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${inter.className}`}>
+      <body className={`${sora.className}`}>
         <Header />
         {children}
       </body>

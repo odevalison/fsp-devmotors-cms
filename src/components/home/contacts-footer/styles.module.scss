@@ -7,12 +7,16 @@
   margin: 84px 0 14px 0;
 
   .innerContactsFooter {
-    width: 90%;
+    width: 100%;
     background-color: #121212;
     padding: 30px 16px;
     border-radius: 16px;
 
     z-index: 20;
+
+    @media (min-width: 1024px) {
+      width: 60%;
+    }
 
     .innerContactsFooterTitle {
       text-align: center;
@@ -28,14 +32,27 @@
       grid-template-columns: 1fr;
       align-items: center;
       justify-content: center;
-      gap: 14px;
+      gap: 30px;
 
       padding: 14px 30px;
+
+      @media (min-width: 640px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
 
       .contactContentBox {
         display: flex;
         align-items: center;
-        gap: 12px;
+        gap: 20px;
+
+        font-size: 14px;
+        text-wrap: nowrap;
+
+        .contactContentInfos {
+          strong + p {
+            margin-top: 12px;
+          }
+        }
       }
     }
   }
