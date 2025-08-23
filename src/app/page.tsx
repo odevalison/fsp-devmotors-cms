@@ -28,7 +28,11 @@ const HomePage = async () => {
           about={object.metadata.about}
           services={object.metadata.services}
         />
-        <ContactsFooter contacts={object.metadata.contact} />
+        <ContactsFooter
+          contacts={object.metadata.contact}
+          ctaButton={object.metadata.cta_button}
+          appName={object.title}
+        />
       </Container>
     </main>
   );

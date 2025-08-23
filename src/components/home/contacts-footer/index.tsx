@@ -1,12 +1,18 @@
 import styles from "./styles.module.scss";
-import type { ContactsType } from "./types";
+import type { AppNameType, ContactsType, CtaButtonType } from "./types";
 import { MailIcon, PhoneIcon, ClockIcon, MapPinIcon } from "lucide-react";
 
 interface ContactsFooterProps {
   contacts: ContactsType;
+  ctaButton: CtaButtonType;
+  appName: AppNameType;
 }
 
-export const ContactsFooter = ({ contacts }: ContactsFooterProps) => {
+export const ContactsFooter = ({
+  contacts,
+  ctaButton,
+  appName,
+}: ContactsFooterProps) => {
   return (
     <footer className={styles.contactsFooterContainer} id="contacts">
       <section className={styles.innerContactsFooter}>
@@ -50,6 +56,18 @@ export const ContactsFooter = ({ contacts }: ContactsFooterProps) => {
           </article>
         </div>
       </section>
+
+      <a
+        href={ctaButton.url}
+        target="_blank"
+        className={styles.contactsFooterCta}
+      >
+        <PhoneIcon size={24} color="#fff" /> {ctaButton.title}
+      </a>
+
+      <p className={styles.contactsFooterCopyright}>
+        Todos direitos reservados {appName} @{`${new Date().getFullYear()}`}
+      </p>
     </footer>
   );
 };
