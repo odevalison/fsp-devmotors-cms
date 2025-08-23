@@ -1,7 +1,7 @@
 import type { HomeAPIResponseData } from "@/utils/home.type";
 
-export type ServicesAboutType =
-  HomeAPIResponseData["object"]["metadata"]["about"];
+type ServicesAboutType = HomeAPIResponseData["object"]["metadata"]["about"];
 
-export type ServicesType =
-  HomeAPIResponseData["object"]["metadata"]["services"];
+type ServicesType = HomeAPIResponseData["object"]["metadata"]["services"];
+
+export type { ServicesAboutType, ServicesType };

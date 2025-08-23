@@ -30,7 +30,7 @@ export const Services = ({ about, services }: ServicesProps) => {
 
       <h2 className={styles.servicesTitle}>Conheça nossos serviços</h2>
 
-      <section className={styles.servicesContainer}>
+      <section className={styles.servicesContainer} id="services">
         {services.map((service, index) => (
           <article key={index} className={styles.serviceContainer}>
             <div className={styles.innerServiceContainer}>

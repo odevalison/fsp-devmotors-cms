@@ -30,8 +30,8 @@ export const Header = () => {
 
         <nav className={styles.headerNavContainer}>
           <Link href="/">Home</Link>
-          <Link href="#servicos">Serviços</Link>
-          <Link href="#contatos">Contatos</Link>
+          <Link href="#services">Serviços</Link>
+          <Link href="#contacts">Contatos</Link>
         </nav>
       </div>
     </header>

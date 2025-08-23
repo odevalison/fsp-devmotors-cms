@@ -17,7 +17,7 @@ export const Hero = ({
   buttonIcon,
 }: HeroProps) => {
   return (
-    <main className={styles.mainContainer}>
+    <main className={styles.mainContainer} id="hero">
       <div className={styles.heroContainer}>
         <h1 className={styles.heroTitle}>{heading}</h1>
 

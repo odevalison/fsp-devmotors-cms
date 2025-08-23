@@ -46,7 +46,7 @@
   }
 
   .innerAboutBanner {
-    width: 400px;
+    width: 300px;
     height: 350px;
     position: relative;
 
@@ -69,15 +69,28 @@
 .servicesTitle {
   text-transform: uppercase;
   color: #121212;
-  margin: 40px 0 24px 0;
+  margin: 64px 0 54px 0;
   text-align: center;
   font-size: 24px;
+
+  // Responsividade do título.
+  @media (min-width: 640px) {
+    font-size: 30px;
+  }
 }
 
 .servicesContainer {
   display: flex;
   gap: 24px;
   flex-direction: column;
+
+  // Responsividade dos serviços
+  @media (min-width: 640px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
 
   .serviceContainer {
     .innerServiceContainer {
@@ -86,6 +99,12 @@
       height: 200px;
       overflow: hidden;
       border-radius: 8px;
+
+      // Responsividade para cada section.
+      @media (min-width: 640px) {
+        width: 280px;
+        height: 200px;
+      }
 
       .innerServiceImage {
         object-fit: cover;
