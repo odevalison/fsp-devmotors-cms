@@ -6,6 +6,7 @@ import type { HomeAPIResponseData } from "@/utils/home.type";
 import { PhoneIcon } from "lucide-react";
 import styles from "./styles.module.scss";
 import { Container } from "@/components/container";
+import { ContactsFooter } from "@/components/home/contacts-footer";
 
 const HomePage = async () => {
   const { object }: HomeAPIResponseData = await getHomeData();
@@ -27,6 +28,7 @@ const HomePage = async () => {
           about={object.metadata.about}
           services={object.metadata.services}
         />
+        <ContactsFooter contacts={object.metadata.contact} />
       </Container>
     </main>
   );

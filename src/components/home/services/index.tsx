@@ -28,9 +28,11 @@ export const Services = ({ about, services }: ServicesProps) => {
         </div>
       </section>
 
-      <h2 className={styles.servicesTitle}>Conheça nossos serviços</h2>
+      <h2 className={styles.servicesTitle} id="services">
+        Conheça nossos serviços
+      </h2>
 
-      <section className={styles.servicesContainer} id="services">
+      <section className={styles.servicesContainer}>
         {services.map((service, index) => (
           <article key={index} className={styles.serviceContainer}>
             <div className={styles.innerServiceContainer}>
