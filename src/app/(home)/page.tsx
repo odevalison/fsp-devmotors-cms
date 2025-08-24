@@ -7,13 +7,16 @@ import { getHomeData } from "@/utils/actions/get-home-data";
 import type { HomeAPIResponseData } from "@/utils/home.type";
 import { PhoneIcon } from "lucide-react";
 import styles from "./styles.module.scss";
+import { getSubmenuData } from "@/utils/actions/get-submenu-data";
+import { SubmenuAPIResponseData } from "@/utils/submenu.type";
 
 const HomePage = async () => {
   const { object }: HomeAPIResponseData = await getHomeData();
+  const { objects: pages }: SubmenuAPIResponseData = await getSubmenuData();
 
   return (
     <main className={styles.mainContainer}>
-      <Submenu />
+      {!!pages.length && <Submenu pages={pages} />}
 
       <Hero
         heading={object.metadata.heading}

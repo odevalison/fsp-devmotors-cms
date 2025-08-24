@@ -22,8 +22,8 @@ export const Services = ({ about, services }: ServicesProps) => {
             alt="Imagem ilustrativa que demonsta um pouco da nossa empresa."
             className={styles.innerAboutImage}
             quality={100}
-            priority
-            fill
+            priority={true}
+            fill={true}
           />
         </div>
       </section>
@@ -41,10 +41,11 @@ export const Services = ({ about, services }: ServicesProps) => {
                 alt={`Imagem ilustrativa sobre o serviço de ${service.description}.`}
                 className={styles.innerServiceImage}
                 quality={100}
-                priority
-                fill
+                priority={true}
+                fill={true}
               />
             </div>
+
             <p className={styles.innerServiceDescription}>
               {service.description}
             </p>

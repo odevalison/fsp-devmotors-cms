@@ -4,22 +4,24 @@ import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
+import { SubmenuPagesType } from "./types";
 
-export const Submenu = () => {
+interface SubmenuProps {
+  pages: SubmenuPagesType;
+}
+
+export const Submenu = ({ pages }: SubmenuProps) => {
   const [submenuIsOpen, setSubmenuIsOpen] = useState(false);
 
   useEffect(() => {
-    // Função que verifica se a largura da tela redimensionada é maior que 768px
     const handleResize = () => {
       if (window.innerWidth > 768) {
         setSubmenuIsOpen(false);
       }
     };
 
-    // Executa a função `handleResize` toda vez que a tela for redimensionada.
     window.addEventListener("resize", handleResize);
 
-    // Remove o ouvidor do evento de `resize` se o componente for desmontado
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
@@ -51,16 +53,16 @@ export const Submenu = () => {
           </button>
         )}
 
-        <li>
-          <Link href="/post/pagina-1" className={styles.submenuListItem}>
-            Página 1
-          </Link>
-        </li>
-        <li>
-          <Link href="/post/pagina-2" className={styles.submenuListItem}>
-            Página 2
-          </Link>
-        </li>
+        {pages.map((page) => (
+          <li key={page.slug}>
+            <Link
+              href={`/post/${page.slug}`}
+              className={styles.submenuListItem}
+            >
+              {page.title}
+            </Link>
+          </li>
+        ))}
       </ul>
     </section>
   );
