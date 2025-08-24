@@ -69,8 +69,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(252, 252, 252, 0.8);
-    backdrop-filter: blur(6px);
+    background-color: #fff;
 
     &.submenuIsOpen {
       display: flex;
