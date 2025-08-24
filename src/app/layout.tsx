@@ -1,6 +1,7 @@
 import { Header } from "@/components/header";
 import type { Metadata } from "next";
 import { Sora } from "next/font/google";
+import SubmenuProvider from "@/contexts/submenu";
 import "./globals.scss";
 
 const sora = Sora({ subsets: ["latin"] });
@@ -19,8 +20,10 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={`${sora.className}`}>
-        <Header />
-        {children}
+        <SubmenuProvider>
+          <Header />
+          {children}
+        </SubmenuProvider>
       </body>
     </html>
   );

@@ -5,13 +5,16 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
 import { SubmenuPagesType } from "./types";
+import { CloseMenuButton } from "./close-menu-button";
+import { OpenMenuButton } from "./open-menu-button";
+import { useSubmenu } from "@/contexts/submenu";
 
 interface SubmenuProps {
   pages: SubmenuPagesType;
 }
 
 export const Submenu = ({ pages }: SubmenuProps) => {
-  const [submenuIsOpen, setSubmenuIsOpen] = useState(false);
+  const { submenuIsOpen, setSubmenuIsOpen } = useSubmenu();
 
   useEffect(() => {
     const handleResize = () => {
@@ -25,33 +28,16 @@ export const Submenu = ({ pages }: SubmenuProps) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const handleToggleMobileSubmenu = () => {
-    setSubmenuIsOpen((prev) => !prev);
-  };
-
   return (
     <section className={styles.submenuContainer}>
-      <button
-        onClick={handleToggleMobileSubmenu}
-        className={styles.submenuIcon}
-      >
-        <Menu size={34} color="#121212" />
-        Serviços
-      </button>
+      <OpenMenuButton />
 
       <ul
         className={`${styles.submenuListContainerDesktop} ${
           submenuIsOpen ? styles.submenuIsOpen : ""
         }`}
       >
-        {submenuIsOpen && (
-          <button
-            onClick={handleToggleMobileSubmenu}
-            className={styles.submenuIcon}
-          >
-            <X size={34} color="#121212" />
-          </button>
-        )}
+        <CloseMenuButton />
 
         {pages.map((page) => (
           <li key={page.slug}>
