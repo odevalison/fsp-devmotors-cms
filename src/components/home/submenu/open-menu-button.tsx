@@ -1,8 +1,8 @@
 "use client";
 
+import { useSubmenu } from "@/contexts/submenu";
 import { MenuIcon } from "lucide-react";
 import styles from "./styles.module.scss";
-import { useSubmenu } from "@/contexts/submenu";
 
 export const OpenMenuButton = () => {
   const { handleToggleSubmenuIsOpen } = useSubmenu();

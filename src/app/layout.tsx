@@ -1,7 +1,7 @@
 import { Header } from "@/components/header";
+import SubmenuProvider from "@/contexts/submenu";
 import type { Metadata } from "next";
 import { Sora } from "next/font/google";
-import SubmenuProvider from "@/contexts/submenu";
 import "./globals.scss";
 
 const sora = Sora({ subsets: ["latin"] });

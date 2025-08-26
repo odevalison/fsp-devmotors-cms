@@ -8,11 +8,13 @@ import type { HomeAPIResponseData } from "@/utils/home.type";
 import { PhoneIcon } from "lucide-react";
 import styles from "./styles.module.scss";
 import { getSubmenuData } from "@/utils/actions/get-submenu-data";
-import { SubmenuAPIResponseData } from "@/utils/submenu.type";
+import type { SubmenuAPIResponseData } from "@/utils/submenu.type";
 
 const HomePage = async () => {
-  const { object }: HomeAPIResponseData = await getHomeData();
-  const { objects: pages }: SubmenuAPIResponseData = await getSubmenuData();
+  const [{ object }, { objects: pages }]: [
+    HomeAPIResponseData,
+    SubmenuAPIResponseData
+  ] = await Promise.all([getHomeData(), getSubmenuData()]);
 
   return (
     <main className={styles.mainContainer}>

@@ -1,13 +1,12 @@
 "use client";
 
-import { Menu, X } from "lucide-react";
+import { useSubmenu } from "@/contexts/submenu";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import styles from "./styles.module.scss";
-import { SubmenuPagesType } from "./types";
+import { useEffect } from "react";
 import { CloseMenuButton } from "./close-menu-button";
 import { OpenMenuButton } from "./open-menu-button";
-import { useSubmenu } from "@/contexts/submenu";
+import styles from "./styles.module.scss";
+import { SubmenuPagesType } from "./types";
 
 interface SubmenuProps {
   pages: SubmenuPagesType;
