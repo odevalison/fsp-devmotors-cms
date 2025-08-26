@@ -2,7 +2,7 @@
 
 import { useSubmenu } from "@/contexts/submenu";
 import { MenuIcon } from "lucide-react";
-import styles from "./styles.module.scss";
+import styles from "../styles.module.scss";
 
 export const OpenMenuButton = () => {
   const { handleToggleSubmenuIsOpen } = useSubmenu();
