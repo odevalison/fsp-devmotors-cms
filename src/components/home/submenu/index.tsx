@@ -3,8 +3,8 @@
 import { useSubmenu } from "@/contexts/submenu";
 import Link from "next/link";
 import { useEffect } from "react";
-import { CloseMenuButton } from "./close-menu-button";
-import { OpenMenuButton } from "./open-menu-button";
+import { CloseMenuButton } from "./components/close-menu-button";
+import { OpenMenuButton } from "./components/open-menu-button";
 import styles from "./styles.module.scss";
 import { SubmenuPagesType } from "./types";
 
