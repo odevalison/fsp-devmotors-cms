@@ -19,9 +19,9 @@ type PageObjectsType = {
       banner: {
         url: string;
       };
+      has_cta_button: boolean;
+      cta_button_title: string;
+      cta_button_url: string;
     };
-    button_active: boolean;
-    button_title: string;
-    button_url: string;
   };
 };

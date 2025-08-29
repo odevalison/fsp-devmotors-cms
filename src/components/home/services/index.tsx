@@ -20,10 +20,11 @@ export const Services = ({ about, services }: ServicesProps) => {
           <Image
             src={about.banner.url}
             alt="Imagem ilustrativa que demonsta um pouco da nossa empresa."
-            className={styles.innerAboutImage}
             quality={100}
             priority={true}
             fill={true}
+            sizes="(max-width: 480px) 100dvw, (max-width: 1024px) 75dvw, 60dvw"
+            className={styles.innerAboutImage}
           />
         </div>
       </section>
@@ -39,10 +40,11 @@ export const Services = ({ about, services }: ServicesProps) => {
               <Image
                 src={service.image.url}
                 alt={`Imagem ilustrativa sobre o serviço de ${service.description}.`}
-                className={styles.innerServiceImage}
                 quality={100}
                 priority={true}
                 fill={true}
+                sizes="(max-width: 480px) 100dvw, (max-width: 1024px) 75dvw, 60dvw"
+                className={styles.innerServiceImage}
               />
             </div>
 
