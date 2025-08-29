@@ -22,7 +22,6 @@ const SubmenuProvider = ({ children }: { children: React.ReactNode }) => {
   const [submenuIsOpen, setSubmenuIsOpen] = useState(false);
 
   const handleToggleSubmenuIsOpen = () => {
-    console.log("Entrou aq");
     setSubmenuIsOpen((prevStateValue) => !prevStateValue);
   };
 
