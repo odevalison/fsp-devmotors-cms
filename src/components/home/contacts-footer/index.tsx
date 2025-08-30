@@ -1,6 +1,12 @@
+import {
+  ClockIcon,
+  MailIcon,
+  MapPinIcon,
+  PhoneCall,
+  PhoneIcon,
+} from "lucide-react";
 import styles from "./styles.module.scss";
 import type { ContactsType, CtaButtonType } from "./types";
-import { MailIcon, PhoneIcon, ClockIcon, MapPinIcon } from "lucide-react";
 
 interface ContactsFooterProps {
   contacts: ContactsType;
@@ -60,7 +66,7 @@ export const ContactsFooter = ({
         target="_blank"
         className={styles.contactsFooterCta}
       >
-        <PhoneIcon size={24} color="#fff" /> {ctaButton.title}
+        <PhoneCall size={18} color="#fff" /> {ctaButton.title}
       </a>
     </footer>
   );

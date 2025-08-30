@@ -20,6 +20,7 @@ export const Content = async ({ slug }: { slug: string }) => {
         buttonIcon={<PhoneIcon size={24} color="#fff" />}
         heading={page.title}
       />
+
       <Container>
         <section className={styles.pageAbout}>
           <article className={styles.pageInnerAbout}>

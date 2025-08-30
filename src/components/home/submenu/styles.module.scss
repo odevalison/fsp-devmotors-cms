@@ -2,77 +2,77 @@
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 65px 15px 5px 15px;
-}
+  padding: 65px 20px 5px 20px;
 
-.submenuIcon {
-  display: none;
-  background: none;
-  font-size: 20px;
-  font-weight: bold;
+  .submenuIcon {
+    display: none;
+    background: none;
+    font-size: 20px;
+    font-weight: 600;
 
-  align-items: center;
-  gap: 10px;
-
-  cursor: pointer;
-
-  @media (max-width: 768px) {
-    display: inline-flex;
-  }
-}
-
-.submenuListContainerDesktop {
-  display: none;
-
-  list-style: none;
-  padding: 15px 0;
-
-  gap: 30px 15px;
-
-  .submenuListItem {
-    background-color: #121212;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 6px;
+    cursor: pointer;
 
     @media (max-width: 768px) {
-      background-color: transparent;
-      color: #121212;
-      font-size: 20px;
-      font-weight: bold;
-
-      transition: all 0.4s;
-
-      &:hover {
-        background-color: #121212;
-        color: #fff;
-      }
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
   }
 
-  // Fica visível apenas quando o tamanho da tela é maior que 768px
-  @media (width > 768px) {
-    display: flex;
-  }
+  .submenuListContainerDesktop {
+    display: none;
 
-  @media (max-width: 768px) {
-    z-index: 99;
+    list-style: none;
+    padding: 15px 0;
 
-    position: fixed;
-    width: 100%;
-    height: 100%;
+    gap: 30px 10px;
 
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-
-    &.submenuIsOpen {
+    @media (width > 768px) {
       display: flex;
+    }
+
+    @media (max-width: 768px) {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+
+      z-index: 99;
+
+      &.submenuIsOpen {
+        display: flex;
+      }
+    }
+
+    .submenuListItem {
+      background-color: #121212;
+      color: #fff;
+      padding: 10px 30px;
+      border-radius: 999px;
+      font-weight: 600;
+
+      @media (max-width: 768px) {
+        background-color: transparent;
+        border: 1px solid #121212;
+        color: #121212;
+        font-size: 20px;
+        font-weight: bold;
+
+        transition: all 0.3s;
+
+        &:hover {
+          background-color: #121212;
+          color: #fff;
+        }
+      }
     }
   }
 }

@@ -7,7 +7,7 @@ import { getHomeData } from "@/utils/actions/get-home-data";
 import { getSubmenuData } from "@/utils/actions/get-submenu-data";
 import type { HomeAPIResponseData } from "@/utils/home.type";
 import type { SubmenuAPIResponseData } from "@/utils/submenu.type";
-import { PhoneIcon } from "lucide-react";
+import { PhoneCall } from "lucide-react";
 import styles from "./styles.module.scss";
 
 const HomePage = async () => {
@@ -23,7 +23,7 @@ const HomePage = async () => {
       <Hero
         heading={object.metadata.heading}
         buttonTitle={object.metadata.cta_button.title}
-        buttonIcon={<PhoneIcon size={20} color="#fff" />}
+        buttonIcon={<PhoneCall size={18} color="#fff" />}
         buttonUrl={object.metadata.cta_button.url}
         bannerUrl={object.metadata.banner.url}
       />

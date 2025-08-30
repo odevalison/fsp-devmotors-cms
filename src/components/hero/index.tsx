@@ -4,7 +4,7 @@ import styles from "./styles.module.scss";
 interface HeroProps {
   heading: string;
   buttonUrl: string;
-  buttonIcon?: React.ReactNode;
+  buttonIcon: React.ReactNode;
   buttonTitle: string;
   bannerUrl: string;
 }
