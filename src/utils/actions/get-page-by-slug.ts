@@ -1,3 +1,5 @@
+import { redirect } from "next/navigation";
+
 export const getPageDataBySlug = async (pageSlug: string) => {
   const baseUrl = `${process.env.NEXT_PUBLIC_API_URL}/objects`;
 
@@ -15,15 +17,13 @@ export const getPageDataBySlug = async (pageSlug: string) => {
     const successfullyResponse = response.ok;
 
     if (!successfullyResponse) {
-      throw new Error("Get page by slug failed!");
+      throw new Error("A página procurada não foi encontrada.");
     }
 
     return response.json();
   } catch (err) {
     if (err instanceof Error) {
-      console.log(err.message);
+      throw Error(err.message);
     }
-
-    throw new Error("Failed get page by slug!");
   }
 };

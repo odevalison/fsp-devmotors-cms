@@ -4,11 +4,11 @@ import { ContactsFooter } from "@/components/home/contacts-footer";
 import { Services } from "@/components/home/services";
 import { Submenu } from "@/components/home/submenu";
 import { getHomeData } from "@/utils/actions/get-home-data";
+import { getSubmenuData } from "@/utils/actions/get-submenu-data";
 import type { HomeAPIResponseData } from "@/utils/home.type";
+import type { SubmenuAPIResponseData } from "@/utils/submenu.type";
 import { PhoneIcon } from "lucide-react";
 import styles from "./styles.module.scss";
-import { getSubmenuData } from "@/utils/actions/get-submenu-data";
-import type { SubmenuAPIResponseData } from "@/utils/submenu.type";
 
 const HomePage = async () => {
   const [{ object }, { objects: pages }]: [
@@ -36,7 +36,6 @@ const HomePage = async () => {
         <ContactsFooter
           contacts={object.metadata.contact}
           ctaButton={object.metadata.cta_button}
-          appName={object.title}
         />
       </Container>
     </main>

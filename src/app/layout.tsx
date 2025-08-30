@@ -1,10 +1,13 @@
 import { Header } from "@/components/header";
 import SubmenuProvider from "@/contexts/submenu";
 import type { Metadata } from "next";
-import { Sora } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.scss";
 
-const sora = Sora({ subsets: ["latin"] });
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+});
 
 export const metadata: Metadata = {
   title: "DevMotors - Oficina Dev especializada!",
@@ -19,10 +22,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${sora.className}`}>
+      <body className={`${poppins.className}`}>
         <SubmenuProvider>
           <Header />
           {children}
+
+          <p style={{ textAlign: "center", marginTop: 34, marginBottom: 24 }}>
+            Todos direitos reservados - Dev Motors @
+            {`${new Date().getFullYear()}`}
+          </p>
         </SubmenuProvider>
       </body>
     </html>

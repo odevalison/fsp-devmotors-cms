@@ -41,7 +41,7 @@ export const Submenu = ({ pages }: SubmenuProps) => {
         {pages.map((page) => (
           <li key={page.slug}>
             <Link
-              href={`/post/${page.slug}`}
+              href={`/page/${page.slug}`}
               className={styles.submenuListItem}
             >
               {page.title}

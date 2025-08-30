@@ -1,0 +1,30 @@
+.errorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+
+  width: 100dvw;
+  height: calc(100dvh - 85px);
+
+  .errorComebackHomeButton {
+    background-color: #121212;
+    color: #fff;
+    padding: 10px 40px;
+    border-radius: 4px;
+    font-weight: 600;
+
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: #222;
+    }
+  }
+
+  .errorContainerTitle {
+    font-size: 28px;
+    max-width: 300px;
+    text-align: center;
+  }
+}
