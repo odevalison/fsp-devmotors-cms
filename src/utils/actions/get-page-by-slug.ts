@@ -1,5 +1,3 @@
-import { redirect } from "next/navigation";
-
 export const getPageDataBySlug = async (pageSlug: string) => {
   const baseUrl = `${process.env.NEXT_PUBLIC_API_URL}/objects`;
 
